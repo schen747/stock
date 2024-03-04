@@ -18,7 +18,6 @@ end_date = st.sidebar.date_input('End Date')
 #################   main pannel 
 st.subheader (f"{symbol} :wave:")
 
-
 if True :
 	# data =yf.download (symbol, start=start_date, end= end_date)
 	ticker = yf.Ticker (symbol)
@@ -49,11 +48,17 @@ if True :
 		st.write (ticker.balance_sheet)
 
 	with news:
-		news_one = ticker.news[0]
+		try:
+			news_one = ticker.news[0]
+		except Exception as e:
+			print(f"Failed to fetch news: {e}")
+			news_one = 'can not find news'
+
 		# for i in range (5):
 		# 	news_one = ticker.news[i]
 		# 	# st.subheader (news_one ['title'])
 		# 	# st.write (news_one ['link'])
 		# 	st.write (news_one)
+		
 		st.write (news_one)
 		# st.write (type(ticker.news[0]))

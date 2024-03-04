@@ -49,11 +49,11 @@ if True :
 		st.write (ticker.balance_sheet)
 
 	with news:
-		# news_one = ticker.news[0]
-		for i in range (5):
-			news_one = ticker.news[i]
-			# st.subheader (news_one ['title'])
-			# st.write (news_one ['link'])
-			st.write (news_one)
-		# st.write (news_one)
+		news_one = ticker.news[0]
+		# for i in range (5):
+		# 	news_one = ticker.news[i]
+		# 	# st.subheader (news_one ['title'])
+		# 	# st.write (news_one ['link'])
+		# 	st.write (news_one)
+		st.write (news_one)
 		# st.write (type(ticker.news[0]))
